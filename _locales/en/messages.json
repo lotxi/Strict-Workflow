@@ -74,9 +74,17 @@
     "message": "Clicking on a running timer restarts it",
     "description": "On the options page, label for the checkbox that enables/disables the feature that clicking on a running timer restarts it"
   },
+  "options_click_skips": {
+    "message": "Clicking on a running break timer skips it (if click to restart is enabled, it will override this setting)",
+    "description": "On the options page, label for the checkbox that enables/disables the feature that clicking on a running timer skips it if a break is in progress"
+  },
   "options_click_restarts_note": {
     "message": "By the strictness philosophy, the only way to <em>cancel</em> a running timer is to disable the extension.",
     "description": "On the options page, note below the label for the click-restarts checkbox explaining that this will not allow users to *cancel* a running timer"
+  },
+  "options_click_skips_note": {
+    "message": "Allows skipping break timer of enabled (because sometimes you don't want a timer for breaks)",
+    "description": "On the options page, note below the label for the click-skips checkbox explaining how break skipping works"
   },
   "options_save_changes": {
     "message": "Save changes",

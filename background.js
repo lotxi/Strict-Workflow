@@ -149,6 +149,12 @@ function Pomodoro(options) {
           this.currentTimer.restart();
       }
   }
+  
+    this.skip = function () {
+      if(this.currentTimer) {
+          this.currentTimer.skip();
+      }
+  }
 }
 
 Pomodoro.Timer = function Timer(pomodoro, options) {
@@ -166,6 +172,11 @@ Pomodoro.Timer = function Timer(pomodoro, options) {
   this.restart = function() {
       this.timeRemaining = options.duration;
       options.onTick(timer);
+  }
+  
+  this.skip = function() {
+      this.timeRemaining = 0;
+	  options.onTick(timer);
   }
 
   this.timeRemainingString = function () {
@@ -346,6 +357,10 @@ chrome.browserAction.onClicked.addListener(function (tab) {
       if(PREFS.clickRestarts) {
           mainPomodoro.restart();
       }
+	  else if (mainPomodoro.mostRecentMode == 'break' && PREFS.clickSkips) {
+				mainPomodoro.skip();
+		  }
+	  
   } else {
       mainPomodoro.start();
   }

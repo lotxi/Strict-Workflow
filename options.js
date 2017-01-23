@@ -29,7 +29,7 @@ var form = document.getElementById('options-form'),
   saveSuccessfulEl = document.getElementById('save-successful'),
   timeFormatErrorEl = document.getElementById('time-format-error'),
   background = chrome.extension.getBackgroundPage(),
-  startCallbacks = {}, durationEls = {};
+  startCallbacks = {}, durationEls = {}, clickSkipsEl = document.getElementById('click-skips');
   
 durationEls['work'] = document.getElementById('work-duration');
 durationEls['break'] = document.getElementById('break-duration');
@@ -85,6 +85,7 @@ showNotificationsEl.checked = background.PREFS.showNotifications;
 shouldRingEl.checked = background.PREFS.shouldRing;
 clickRestartsEl.checked = background.PREFS.clickRestarts;
 whitelistEl.selectedIndex = background.PREFS.whitelist ? 1 : 0;
+clickSkipsEl.checked = background.PREFS.clickSkips;
 
 var duration, minutes, seconds;
 for(var key in durationEls) {
