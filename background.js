@@ -357,7 +357,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
       if(PREFS.clickRestarts) {
           mainPomodoro.restart();
       }
-	  else if (PREFS.clickSkips) {
+	  else if (PREFS.clickSkips &&  mainPomodoro.mostRecentMode== 'break') {
 				mainPomodoro.skip();
 		  }
 	  
